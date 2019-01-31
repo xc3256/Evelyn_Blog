@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml">
+<head th:replace="admin/_admin_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/headerNfooter.css">
+</head>
+<body>
+    <nav th:replace="admin/_admin_fragments :: menu(0)" class="ui inverted attached segment" >
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui olive header logo item"><i class="paw mini icon"></i>Evelyn's Blog</h2>
+                <a href="#" target="_blank" class="active m-item item m-mobile-hide"><i class="home icon"></i>Blog</a>
+                <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="idea icon"></i>Classification</a>
+                <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="tags icon"></i>Tag</a>
+
+                <div class="m-item right m-mobile-hide menu">
+                    <div class="ui dropdown item">
+                        <img src="../../static/images/head.jpg" class="head-img-size">
+                        <p class="head-text">Xi Chen</p>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a href="#" th:href="@{admin/logout}" class="item"> log out</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button sidebar-location m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+
+    </nav>
+    <div th:replace="admin/_admin_fragments :: contraol_panel" class="ui attached pointing menu">
+        <div class="ui container">
+            <a href="#" class="olive item"> publish </a>
+            <a href="#" class="active olive item"> list </a>
+        </div>
+    </div>
+
+<!--body-->
+    <h1>Hello! </h1>
+
+
+    <!--footer-->
+    <footer class="ui inverted attached segment">
+        <div class="ui center aligned container footer-container">
+            <div class="ui grid">
+                <p class="footer-text text-space text-thin">I have my bottom line!  (￣ε(#￣)☆╰╮o(￣皿￣///) </p>
+            </div>
+
+            <div class="ui inverted section divider footer-divider"></div>
+            <p class="copy-right text-space text-thin"> Copyright @ 2018 Designed by Xi</p>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+<script src="../../static/lib/editor/editormd.min.js" th:src="@{../../lib/editor/editormd.min.js}"></script>
+
+<script>
+    var testEditor;
+    $(function() {
+        testEditor = editormd("md-editor", {
+            width     : "100%",
+            height    : 720,
+            syncScrolling:'single',
+            path      : '../static/lib/editor/lib/'
+        });
+    });
+
+</script>
+
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown();
+
+    $('.ui.form').form({
+        fields : {
+            title : {
+                identifier: 'title',
+                rules: [{
+                    type : 'empty',
+                    prompt: 'Please input title'
+                }]
+            },
+
+            content : {
+                identifier: 'content',
+                rules: [{
+                    type : 'empty',
+                    prompt: 'Please input content'
+                }]
+            },
+
+            img : {
+                identifier: 'content-img',
+                rules: [{
+                    type : 'empty',
+                    prompt: 'Please input content image'
+                }]
+            }
+        }
+    });
+
+
+</script>
+</body>
+</html>

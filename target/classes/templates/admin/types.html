@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml">
+<head th:replace="admin/_admin_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>Type Control</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/headerNfooter.css">
+</head>
+<body>
+<nav th:replace="admin/_admin_fragments :: menu(2)" class="ui inverted attached segment" >
+    <div class="ui container">
+        <div class="ui inverted secondary stackable menu">
+            <h2 class="ui olive header logo item"><i class="paw mini icon"></i>Evelyn's Blog</h2>
+            <a href="#" target="_blank" class="active m-item item m-mobile-hide"><i class="home icon"></i>Blog</a>
+            <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="idea icon"></i>Classification</a>
+            <a href="#" target="_blank" class="m-item item m-mobile-hide"><i class="tags icon"></i>Tag</a>
+
+            <div class="m-item right m-mobile-hide menu">
+                <div class="ui dropdown item">
+                    <img src="../../static/images/head.jpg" class="head-img-size">
+                    <p class="head-text">Xi Chen</p>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" th:href="@{admin/logout}" class="item"> log out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui menu toggle black icon button sidebar-location m-mobile-show">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+<div th:replace="admin/_admin_fragments :: contraol_panel" class="ui attached pointing menu">
+    <div class="ui container">
+        <a href="#" class="olive item"> publish </a>
+        <a href="#" class="active olive item"> list </a>
+    </div>
+</div>
+
+<!--body-->
+<div class="large-padding blog-container-width">
+    <div class="ui container">
+        <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
+            <i class="close icon"></i>
+            <div class="header">提示：</div>
+            <p th:text="${message}">恭喜，操作成功！</p>
+        </div>
+        <table class="ui table">
+            <thead>
+            <tr>
+                <th></th>
+                <th>title</th>
+                <th>operation</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="type,iterStat : ${page.content}">
+                <td th:text="${iterStat.count}">1</td>
+                <td th:text="${type.name}">I Love eve</td>
+                <td>
+                    <a href="#" th:href="@{/admin/types/{id}/input(id=${type.id})}" class="ui mini teal basic button">Edit</a>
+                    <a href="#" th:href="@{/admin/types/{id}/delete(id=${type.id})}" class="ui mini red basic button">Delete</a>
+                </td>
+            </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th colspan="6">
+                        <div class="ui left floated pagination menu" th:if="${page.totalPages}>1">
+                            <a th:href="@{/admin/types(page=${page.number}-1)}" class="icon item" th:unless="${page.first}">
+                                <i class="left chevron icon"></i>
+                            </a>
+                            <a th:href="@{/admin/types(page=${page.number}+1)}" class="icon item" th:unless="${page.last}">
+                                <i class="right chevron icon"></i>
+                            </a>
+                        </div>
+
+                        <a th:href="@{/admin/types/input}" class="ui right floated olive button">
+                            Add
+                        </a>
+                    </th>
+                </tr>
+            </tfoot>
+
+        </table>
+    </div>
+</div>
+
+
+<!--footer-->
+<footer class="ui inverted attached segment">
+    <div class="ui center aligned container footer-container">
+        <div class="ui grid">
+            <p class="footer-text text-space text-thin">I have my bottom line!  (￣ε(#￣)☆╰╮o(￣皿￣///) </p>
+        </div>
+
+        <div class="ui inverted section divider footer-divider"></div>
+        <p class="copy-right text-space text-thin"> Copyright @ 2018 Designed by Xi</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+<script src="../../static/lib/editor/editormd.min.js" th:src="@{../../lib/editor/editormd.min.js}"></script>
+
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('.ui.dropdown').dropdown();
+
+    //消息提示关闭初始化
+    $('.message .close')
+        .on('click', function () {
+            $(this)
+                .closest('.message')
+                .transition('fade');
+        });
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+.head-img-size{
+    width:30px !important;
+    height:30px !important;
+    margin-right: 1em !important;
+}
+
+.head-text{
+    padding-top: 10px;
+    padding-right: 1em !important;
+}
+
+.login-padding{
+    max-width: 40em;
+    padding-top: 8em;
+    margin:auto;
+}

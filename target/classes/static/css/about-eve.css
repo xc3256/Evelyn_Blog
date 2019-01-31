@@ -1,0 +1,13 @@
+.blog-padding{
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}
+
+.mini-margin{
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+}
+
+.auto-margin{
+    margin: auto !important;
+}

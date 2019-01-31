@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml">
+<head th:insert="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>About Evelyn</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="../static/css/about-eve.css" th:href="@{css/about-eve.css}">-->
+</head>
+<body>
+    <!--nav bar-->
+    <nav th:replace="_fragments :: menu(4)" class="ui inverted attached segment" ></nav>
+
+    <!--body-->
+    <div id="waypoint" class="large-padding blog-container-width">
+        <div class="ui container">
+            <div class="ui stackable grid">
+                <!--eleven part-->
+                <div class="eleven wide auto-margin column">
+                    <img src="../static/images/cat.jpg" alt="" class="ui rounded image" th:src="@{images/cat.jpg}">
+                </div>
+
+                <!--right part-->
+                <div class="five wide column">
+                    <div class="ui top attached segment">
+                        <div class="ui header">About Evelyn</div>
+                    </div>
+                    <div class="ui attached olive segment">
+                        Evelyn is a cute cute cute cute cute cute cute cat!!!!!!
+                    </div>
+                    <div class="ui bottom attached segment">
+                        <div class="ui olive small mini-margin button text-thin">naughty</div>
+                        <div class="ui olive small mini-margin button text-thin">naughty</div>
+                        <div class="ui olive small mini-margin button text-thin">naughty</div>
+                        <div class="ui olive small mini-margin button text-thin">naughty</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="to-top-at-right-bottom" style="z-index: 1">
+        <div class="ui vertical icon buttons">
+            <div id="toTop" class="ui olive icon button"><i class="chevron up icon"></i></div>
+        </div>
+    </div>
+
+
+    <!--footer-->
+    <footer th:replace="_fragments :: footer"></footer>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('#toTop').on('click',function(){
+        $(window).scrollTo(0,500);
+    });
+
+    var waypoint = new Waypoint({
+        element: document.getElementById('waypoint'),
+        handler: function(direction) {
+            if(direction=='down'){
+                $('#toTop').show();
+            }else{
+                $('#toTop').hide();
+            }
+            console.log('Scrolled to waypoint!'+direction);
+        }
+    })
+</script>
+
+</body>
+</html>

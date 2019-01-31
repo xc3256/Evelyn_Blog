@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/headerNfooter.css" th:src="@{css/headerNfooter.css}">
+    <!--<link rel="stylesheet" href="../../static/css/blog-control.css" th:src="@{css/blog-control.css}">-->
+    <!--<link rel="stylesheet" href="../../static/lib/editor/css/editormd.min.css" th:src="@{lib/editor/css/editormd.min.css}">-->
+</head>
+<body>
+    <nav th:replace="_fragments :: menu(0)" class="ui inverted attached segment" ></nav>
+    <div class="login-padding blog-container-width">
+        <div class="ui container">
+            <div class="ui middle aligned center aligned grid">
+                <div class="column">
+                    <h2 class="ui olive image header">
+                        <img src="../../static/images/cat.jpeg" class="image" th:src="@{images/cat.jpeg}">
+                        <div class="content">
+                            Meow~ into your account
+                        </div>
+                    </h2>
+                    <form class="ui large form" method="post" action="#" th:action="@{/admin/login}">
+                        <div class="ui  segment">
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="user icon"></i>
+                                    <input type="text" name="username" placeholder="用户名">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="lock icon"></i>
+                                    <input type="password" name="password" placeholder="密码">
+                                </div>
+                            </div>
+                            <button class="ui fluid large olive submit button">登   录</button>
+                        </div>
+
+                        <div class="ui error mini message"></div>
+                        <div class="ui mini negative message" th:unless="${#strings.isEmpty(message)}" th:text="${message}">用户名和密码错误</div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+    <script src="../../static/lib/editor/editormd.min.js" th:src="@{../../lib/editor/editormd.min.js}"></script>
+
+</body>
+</html>

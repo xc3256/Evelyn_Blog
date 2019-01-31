@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <title th:replace = "${title}">Blog Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/headerNfooter.css" th:href="@{../../css/headerNfooter.css}">
+</head>
+<body>
+
+    <nav th:fragment="menu(n)" class="ui inverted attached segment" >
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui olive header logo item"><i class="paw mini icon"></i>Evelyn's Blog</h2>
+                <a href="#" th:href="@{/admin/blogs}" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="home icon"></i>Blog</a>
+                <a href="#" th:href="@{/admin/types}" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>Classification</a>
+                <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="tags icon"></i>Tag</a>
+
+                <div class="m-item right m-mobile-hide menu">
+                    <div class="ui dropdown item">
+                        <img src="../../static/images/head.jpg" th:src="@{../../images/head.jpg}" class="head-img-size">
+                        <p class="head-text">Xi Chen</p>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a href="#" th:href="@{./logout}" class="item"> log out</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button sidebar-location m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <div th:fragment="contraol_panel" class="ui attached pointing menu">
+        <div class="ui container">
+            <a href="#" class="olive item"> publish </a>
+            <a href="#" class="olive item"> list </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

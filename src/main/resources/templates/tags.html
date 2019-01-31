@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml">
+<head th:insert="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>Tags</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/tags.css" th:href="@{css/tags.css}">
+</head>
+<body>
+    <!--nav bar-->
+    <nav th:replace="_fragments :: menu(3)" class="ui inverted attached segment" ></nav>
+
+    <!--body-->
+    <div id="waypoint" class="large-padding classification-container-width">
+        <div class="ui container">
+            <!--head-->
+            <div class="ui top attached segment">
+                <h3 class="ui olive header">Tags</h3>
+            </div>
+            <div class="ui olive bottom attached segment">
+                <a href="#" target="_blank" class="ui olive left pointing big mini-margin label">Therapy</a>
+                <a href="#" target="_blank" class="ui olive left pointing big mini-margin label">Therapy</a>
+                <a href="#" target="_blank" class="ui olive left pointing big mini-margin label">Therapy</a>
+                <a href="#" target="_blank" class="ui olive left pointing big mini-margin label">Therapy</a>
+                <a href="#" target="_blank" class="ui olive left pointing big mini-margin label">Therapy</a>
+                <a href="#" target="_blank" class="ui olive left pointing big mini-margin label">Therapy</a>
+                <a href="#" target="_blank" class="ui olive left pointing big mini-margin label">Therapy</a>
+            </div>
+
+            <!--content-->
+            <div class="ui top attached blog-padding segment">
+                <div class="ui padded vertical segment">
+                    <p class="date-text text-thin">Date: Sept.8, 2018 </p>
+                    <div class="ui stackable grid">
+                        <div class="row">
+                            <div class="eleven wide column">
+                                <h3 class="ui header blog-title"> First Blog!</h3>
+                                <p class="blog-quote"> I will write sth here finallyI will write sth here finally
+                                    I will write sth here finallyI will write sth here finally
+                                    I will write sth here finallyI will write sth here finally
+                                    I will write sth here finallyI will write sth here finally
+                                </p>
+                            </div>
+
+                            <div class="five wide column">
+                                <a href="#" target="_blank">
+                                    <img src="https://unsplash.it/800/450?image=1005" alt="" class="ui rounded image">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <a href="#" target="_blank" class="ui small basic olive left pointing  mini-margin button">
+                                    Therapy
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--buttom-->
+            <div class="ui bottom attached blog-padding segment">
+                <div class="ui middle aligned two column grid">
+                    <div class="column">
+                        <a href="#" class="ui olive basic button">Previous</a>
+                    </div>
+                    <div class="right aligned column">
+                        <a href="#" class="ui olive basic button">Next</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="to-top-at-right-bottom" style="z-index: 1">
+        <div class="ui vertical icon buttons">
+            <div id="toTop" class="ui olive icon button"><i class="chevron up icon"></i></div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer class="ui inverted attached segment">
+        <div class="ui center aligned container footer-container">
+            <div class="ui grid">
+                <p class="footer-text text-space text-thin">I have my bottom line!  (￣ε(#￣)☆╰╮o(￣皿￣///) </p>
+            </div>
+
+            <div class="ui inverted section divider footer-divider"></div>
+            <p class="copy-right text-space text-thin"> Copyright @ 2018 Designed by Xi</p>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    $('#toTop').on('click',function(){
+        $(window).scrollTo(0,500);
+    });
+
+    var waypoint = new Waypoint({
+        element: document.getElementById('waypoint'),
+        handler: function(direction) {
+            if(direction=='down'){
+                $('#toTop').show();
+            }else{
+                $('#toTop').hide();
+            }
+            console.log('Scrolled to waypoint!'+direction);
+        }
+    })
+</script>
+
+</body>
+</html>

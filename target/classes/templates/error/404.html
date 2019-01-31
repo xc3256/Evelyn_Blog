@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+
+<body>
+<!--nav bar-->
+<nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment" ></nav>
+<div class="large-padding index-container-width">
+    <h1 class="auto-margin">404</h1>
+    <h1 class="mini-margin">Sorry, the requested URL is not found. </h1>
+</div>
+<footer th:replace="_fragments :: footer"></footer>
+</body>
+</html>

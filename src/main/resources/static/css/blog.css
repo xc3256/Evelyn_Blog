@@ -1,0 +1,49 @@
+img{
+    max-height: 5em;
+    max-width: 70em;
+}
+
+
+.date-text{
+    font-size: 1em;
+    padding-bottom: 0em;
+}
+
+
+.mid-padded{
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+}
+
+.mid-padded-content{
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+}
+
+.title-padded{
+    padding-top: 1em !important;
+}
+
+
+.white-text{
+    color: white !important;
+}
+
+.center-aligned{
+    align-content: center !important;
+}
+
+.input-padded{
+    padding-right: 2em !important;
+}
+
+.blog-container-width{
+    max-width: 65em !important;
+    margin:auto !important;
+}
+
+

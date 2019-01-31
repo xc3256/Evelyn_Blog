@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml">
+<head th:insert="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <title>Blog Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="../static/css/blog.css" th:href="@{css/blog.css}">-->
+</head>
+<body>
+    <!--nav bar-->
+    <nav th:replace="_fragments :: menu(1)" class="ui inverted attached segment" ></nav>
+
+    <!--body-->
+    <div id="waypoint" class="large-padding blog-container-width">
+        <div class="ui container">
+            <div class="ui top attached segment">
+                <p class="blog-date-text text-thin">Date: Sept.8, 2018 </p>
+            </div>
+            <div class="ui attached segment">
+                <img src="../static/images/bg.png" alt="" class="ui fluid rounded blog-img image" th:src="@{images/bg.png}">
+            </div>
+            <div class="ui attached segment">
+                <h2 class="ui title-padded center aligned header"> My first blog!</h2>
+                <div id="content" class="typo typo-selection blog-mid-padded-content">
+                    <pre><code class="language-css">p{color:red}</code></pre>
+                    <p> Mutley, you snickering, floppy eared hound. When courage is needed, you're never around. Those medals you wear on your moth-eaten chest should be there for bungling at which you are best. So, stop that pigeon, stop that pigeon, stop that pigeon, stop that pigeon, stop that pigeon, stop that pigeon, stop that pigeon. Howwww! Nab him, jab him, tab him, grab him, stop that pigeon now.
+                    </p> <p>Top Cat! The most effectual Top Cat! Who's intellectual close friends get to call him T.C., providing it's with dignity. Top Cat! The indisputable leader of the gang. He's the boss, he's a pip, he's the championship. He's the most tip top, Top Cat.
+
+                    </p> <p>Knight Rider, a shadowy flight into the dangerous world of a man who does not exist. Michael Knight, a young loner on a crusade to champion the cause of the innocent, the helpless in a world of criminals who operate above the law.
+
+                    </p><p>Children of the sun, see your time has just begun, searching for your ways, through adventures every day. Every day and night, with the condor in flight, with all your friends in tow, you search for the Cities of Gold. Ah-ah-ah-ah-ah... wishing for The Cities of Gold. Ah-ah-ah-ah-ah... some day we will find The Cities of Gold. Do-do-do-do ah-ah-ah, do-do-do-do, Cities of Gold. Do-do-do-do, Cities of Gold. Ah-ah-ah-ah-ah... some day we will find The Cities of Gold.
+
+                    </p><p>Hong Kong Phooey, number one super guy. Hong Kong Phooey, quicker than the human eye. He's got style, a groovy style, and a car that just won't stop. When the going gets tough, he's really rough, with a Hong Kong Phooey chop (Hi-Ya!). Hong Kong Phooey, number one super guy. Hong Kong Phooey, quicker than the human eye. Hong Kong Phooey, he's fan-riffic!</p>
+                </div>
+
+                <div class="mid-padded">
+                    <div class="ui basic olive label"><p class="white-text text-thin">Eve's daily live</p></div>
+                    <div class="ui basic olive label"><p class="white-text text-thin">Eve's daily live</p></div>
+                </div>
+
+            </div>
+            <div class="ui attached vertical message">
+                <ui class="list">
+                    <li><a href="#" target="_blank">recommendations</a></li>
+                    <li><a href="#" target="_blank">recommendations</a></li>
+                    <li><a href="#" target="_blank">recommendations</a></li>
+                    <li><a href="#" target="_blank">recommendations</a></li>
+                </ui>
+            </div>
+            <div class="ui bottom attached segment">
+
+                <div class="ui threaded comments">
+                    <h3 class="ui dividing header">Comments</h3>
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="../static/images/head.jpg" class="blog-img" th:src="@{images/head.jpg}">
+                        </a>
+                        <div class="content">
+                            <a class="author">Matt</a>
+                            <div class="metadata">
+                                <span class="date">Today at 5:42PM</span>
+                            </div>
+                            <div class="text">
+                                How artistic!
+                            </div>
+                            <div class="actions">
+                                <a class="reply">Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="../static/images/head.jpg" class="blog-img" th:src="@{images/head.jpg}">
+                        </a>
+                        <div class="content">
+                            <a class="author">Elliot Fu</a>
+                            <div class="metadata">
+                                <span class="date">Yesterday at 12:30AM</span>
+                            </div>
+                            <div class="text">
+                                <p>This has been very useful for my research. Thanks as well!</p>
+                            </div>
+                            <div class="actions">
+                                <a class="reply">Reply</a>
+                            </div>
+                        </div>
+                        <div class="comments">
+                            <div class="comment">
+                                <a class="avatar">
+                                    <img src="../static/images/head.jpg" class="blog-img" th:src="@{images/head.jpg}">
+                                </a>
+                                <div class="content">
+                                    <a class="author">Jenny Hess</a>
+                                    <div class="metadata">
+                                        <span class="date">Just now</span>
+                                    </div>
+                                    <div class="text">
+                                        Elliot you are always so right :)
+                                    </div>
+                                    <div class="actions">
+                                        <a class="reply">Reply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="comment">
+                        <a class="avatar">
+                            <img src="../static/images/head.jpg" class="blog-img" th:src="@{images/head.jpg}">
+                        </a>
+                        <div class="content">
+                            <a class="author">Joe Henderson</a>
+                            <div class="metadata">
+                                <span class="date">5 days ago</span>
+                            </div>
+                            <div class="text">
+                                Dude, this is awesome. Thanks so much
+                            </div>
+                            <div class="actions">
+                                <a class="reply">Reply</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui form">
+                    <div class="ui field">
+                        <textarea class="center-aligned" placeholder="Input comments here ..."></textarea>
+                    </div>
+
+                    <div class="ui blog-input-padded left icon mobile-wide input">
+                        <i class="user icon"></i>
+                        <input type="text" name="name" placeholder="name">
+                    </div>
+
+                    <div class="ui olive labeled submit icon center mobile-wide button">
+                        <i class="icon edit"></i> Add Reply
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="to-top-at-right-bottom" style="z-index: 1">
+        <div class="ui vertical icon buttons">
+            <div id="toTop" class="ui olive icon button"><i class="chevron up icon"></i></div>
+        </div>
+    </div>
+
+
+    <!--footer-->
+    <!--footer-->
+    <footer th:replace="_fragments :: footer"></footer>
+
+    <!--/*/<th:block th:replace="_fragments :: script">/*/-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.js" th:src="@{lib/waypoints/jquery.waypoints.js}"></script>
+    <!--/*/</th:block>/*/-->
+
+    <script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
+    });
+
+    var waypoint = new Waypoint({
+        element: document.getElementById('waypoint'),
+        handler: function(direction) {
+            if(direction=='down'){
+                $('#toTop').show();
+            }else{
+                $('#toTop').hide();
+            }
+            console.log('Scrolled to waypoint!'+direction);
+        }
+    })
+
+    $('#toTop').on('click',function(){
+        $(window).scrollTo(0,500);
+    });
+</script>
+
+</body>
+</html>

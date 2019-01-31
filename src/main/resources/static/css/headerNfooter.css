@@ -1,0 +1,202 @@
+/****************body**************/
+body{
+    background: url("../images/bg.png");
+}
+
+/**************nav bar and footer*************/
+.sidebar-location{
+    position: absolute;
+    top:1.5em;
+    right:0;
+}
+
+.click-show{
+    display: block !important;
+}
+
+
+.m-mobile-show{
+    display: none !important;
+}
+
+@media screen and (max-width: 768px){
+    .mid-padded-content{
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .input-padded{
+        padding-bottom: 0.8em !important;
+        padding-right: 0 !important;
+    }
+    .mobile-wide{
+        width: 100% !important;
+    }
+
+    .m-mobile-hide {
+        display: none !important;
+    }
+    .m-mobile-show {
+        display: block !important;
+    }
+
+}
+
+.logo{
+    font-family: "Comic Sans MS", cursive, sans-serif !important;
+}
+
+.nav-text{
+    font-size:15px !important;
+    padding-top: 1em !important;
+}
+
+.footer-text{
+    margin: auto;
+    padding-top: 1em;
+    font-size:1em;
+    color: white;
+    color:darkgrey;
+}
+
+.copy-right{
+    height: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color:darkgrey;
+}
+
+.footer-divider{
+    height:0 !important;
+    margin-top: 1.6em !important;
+    margin-bottom: 0.5em !important;
+}
+
+.text-space{
+    letter-spacing: 0.2em;
+}
+
+.text-thin{
+    font-weight: 100 !important;
+}
+
+.large-padding{
+    padding-top: 3em;
+    padding-bottom: 3em;
+}
+
+.to-top-at-right-bottom{
+    position: fixed !important;
+    bottom: 0 !important;
+    right:0 !important;
+    padding: 0.5em !important;
+}
+
+
+/**************Index*************/
+.date-text{
+    font-size: 0.8em;
+    padding-bottom: 0em;
+}
+
+.side-bar-title{
+    color: #A5BB00 !important;
+    font-weight: bold !important;
+}
+
+.index-container-width{
+    max-width: 73em;
+    margin: auto;
+}
+
+/****************Classification**********/
+.white-text{
+    color: white !important;
+}
+
+.mini-margin{
+    margin-top: 0.5em !important;
+    margin-bottom: 0.5em !important;
+}
+
+.classification-container-width{
+    max-width: 60em !important;
+    margin:auto !important;
+}
+
+
+.blog-padding{
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}
+
+
+/****************Tag**********/
+/***** Duplicate with Above *******/
+
+/**********About-Eve*********/
+.auto-margin{
+    margin: auto !important;
+}
+
+
+/*!*********** Blog ********/
+.blog-img{
+    max-height: 5em;
+    max-width: 70em;
+}
+
+
+.blog-date-text{
+    font-size: 1em;
+    padding-bottom: 0em;
+}
+
+
+.mid-padded{
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+}
+
+.blog-mid-padded-content{
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+    padding-left: 3em !important;
+    padding-right: 3em !important;
+}
+
+.title-padded{
+    padding-top: 1em !important;
+}
+
+.center-aligned{
+    align-content: center !important;
+}
+
+.blog-input-padded{
+    padding-right: 2em !important;
+}
+
+.blog-container-width{
+    max-width: 65em !important;
+    margin:auto !important;
+}
+
+/***********Blog-Control*********/
+.head-img-size{
+    width:30px !important;
+    height:30px !important;
+    margin-right: 1em !important;
+}
+
+.head-text{
+    padding-top: 10px;
+    padding-right: 1em !important;
+}
+
+.login-padding{
+    max-width: 40em;
+    padding-top: 6em;
+    margin:auto;
+}

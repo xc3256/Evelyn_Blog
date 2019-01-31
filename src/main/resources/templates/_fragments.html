@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.w3.org/1999/xhtml">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <title th:replace = "${title}">Blog Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{lib/prism/prism.css}">
+    <link rel="stylesheet" href="../static/css/headerNfooter.css" th:href="@{css/headerNfooter.css}">
+</head>
+<body>
+    <nav th:fragment="menu(n)" class="ui inverted attached segment" >
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui olive header logo item"><i class="paw mini icon"></i>Evelyn's Blog</h2>
+                <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==1} ? 'active'"><i class="home icon"></i>Blog</a>
+                <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==2} ? 'active'"><i class="idea icon"></i>Classification</a>
+                <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==3} ? 'active'"><i class="tags icon"></i>Tag</a>
+                <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="info icon"></i>About Evelyn</a>
+                <div class="right m-item item m-mobile-hide">
+                    <div class="ui icon inverted transparent input m-margin-tb-tiny">
+                        <input type="text" placeholder="Search....">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button sidebar-location m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+</body>
+
+<footer th:fragment="footer" class="ui inverted attached segment">
+    <div class="ui center aligned container footer-container">
+        <div class="ui grid">
+            <p class="footer-text text-space text-thin">I have my bottom line!  (￣ε(#￣)☆╰╮o(￣皿￣///) </p>
+        </div>
+
+        <div class="ui inverted section divider footer-divider"></div>
+        <p class="copy-right text-space text-thin"> Copyright @ 2018 Designed by Xi</p>
+    </div>
+
+</footer>
+
+
+<th:block th:fragment="script">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.3.3/dist/semantic.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{lib/waypoints/jquery.waypoints.min.js}"></script>
+    <script src="../static/lib/prism/prism.js" th:src="@{lib/prism/prism.js}"></script>
+</th:block>
+
+</html>
